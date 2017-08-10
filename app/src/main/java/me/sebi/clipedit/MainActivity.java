@@ -2,7 +2,6 @@ package me.sebi.clipedit;
 
 import android.app.Activity;
 import android.content.ClipData;
-import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -31,8 +30,10 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        if (sdk < 11) clipboard_text = (android.text.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-        else clipboard_content = (android.content.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+        if (sdk < 11)
+            clipboard_text = (android.text.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+        else
+            clipboard_content = (android.content.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
         editText = findViewById(R.id.editText);
         button_clearAndExit = findViewById(R.id.button_clearAndExit);
         loadPrefs();
@@ -111,7 +112,7 @@ public class MainActivity extends Activity {
         if (clearAndExit) button_clearAndExit.setVisibility(View.VISIBLE);
         else button_clearAndExit.setVisibility(View.GONE);
         if (centerText) editText.setGravity(Gravity.CENTER);
-        else editText.setGravity(Gravity.LEFT);
+        else editText.setGravity(Gravity.START);
         if (getOnOpen) getClipboard(null);
     }
 }

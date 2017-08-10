@@ -2,7 +2,6 @@ package me.sebi.clipedit;
 
 import android.app.Activity;
 import android.content.ClipData;
-import android.content.ClipboardManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.widget.Toast;
