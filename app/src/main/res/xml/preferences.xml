@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="getOnOpen"
+        android:title="@string/settings_getOnOpen" />
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="setOnClose"
+        android:title="@string/settings_setOnClose" />
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="closeOnClear"
+        android:title="@string/settings_closeOnClear" />
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="clearAndExit"
+        android:title="@string/settings_clearAndExit" />
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="clearShortcut"
+        android:summary="@string/settings_clearShortcut_summary"
+        android:title="@string/settings_clearShortcut" />
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="centerText"
+        android:title="@string/settings_centerText" />
+</PreferenceScreen>

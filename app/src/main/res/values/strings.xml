@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ClipEdit</string>
+    <string name="get">Get</string>
+    <string name="set">Set</string>
+    <string name="clear">Clear</string>
+    <string name="clearAndExit">Clear &amp; Exit</string>
+    <string name="settings">Settings</string>
+    <string name="settings_getOnOpen">Get Clipboard when opening the app</string>
+    <string name="settings_setOnClose">Set Clipboard when closing the app</string>
+    <string name="settings_closeOnClear">Close app after clearing Clipboard</string>
+    <string name="settings_clearAndExit">Show button to clear and exit</string>
+    <string name="settings_clearShortcut">\"Clear Clipboard\" Launcher Shortcut</string>
+    <string name="settings_clearShortcut_summary">It might take a reboot for the Shortcut to show up</string>
+    <string name="settings_centerText">Center text</string>
+    <string name="toast_clipboardCleared">Clipboard Cleared</string>
+</resources>
