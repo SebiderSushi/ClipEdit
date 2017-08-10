@@ -61,8 +61,8 @@ public class MainActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-        if (getOnOpen) getClipboard(null);
         loadPrefs();
+        if (getOnOpen) getClipboard(null);
     }
 
     @Override
@@ -89,7 +89,10 @@ public class MainActivity extends Activity {
             ClipData clip = clipboard_content.getPrimaryClip();
             if (clip != null) text = clip.getItemAt(0).coerceToText(this);
         }
-        editText.append(text);
+        if (view == null)
+            editText.setText(text);
+        else
+            editText.append(text);
     }
 
     public void clearEditText(View view) {
