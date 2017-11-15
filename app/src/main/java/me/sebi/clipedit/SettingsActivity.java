@@ -16,10 +16,10 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
 
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         if (key.equals("clearShortcut")) {
-            boolean clearShortcut = sharedPreferences.getBoolean(key, false);
+            boolean clearShortcut = sharedPreferences.getBoolean(key, true);
 
-            int newState = PackageManager.COMPONENT_ENABLED_STATE_DISABLED;
-            if (clearShortcut) newState = PackageManager.COMPONENT_ENABLED_STATE_DEFAULT;
+            int newState = PackageManager.COMPONENT_ENABLED_STATE_DEFAULT;
+            if (!clearShortcut) newState = PackageManager.COMPONENT_ENABLED_STATE_DISABLED;
 
             ComponentName cn = new ComponentName(this, ClearAction.class);
             getPackageManager().setComponentEnabledSetting(cn, newState, PackageManager.DONT_KILL_APP);

@@ -10,7 +10,7 @@
     <string name="settings_closeOnClear">Close app after clearing Clipboard</string>
     <string name="settings_clearAndExit">Show button to clear and exit</string>
     <string name="settings_clearShortcut">\"Clear Clipboard\" Launcher Shortcut</string>
-    <string name="settings_clearShortcut_summary">It might take a reboot for the Shortcut to show up</string>
+    <string name="settings_clearShortcut_summary">It might take a reboot for some launchers to apply this</string>
     <string name="settings_centerText">Center text</string>
     <string name="toast_clipboardCleared">Clipboard Cleared</string>
 </resources>
