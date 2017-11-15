@@ -62,7 +62,9 @@ public class MainActivity extends Activity {
     protected void onResume() {
         super.onResume();
         loadPrefs();
+        boolean wasEmpty = editText.getText().length() == 0;
         if (getOnOpen) getClipboard(null);
+        if (wasEmpty) editText.setSelection(editText.getText().length());
     }
 
     @Override
@@ -89,9 +91,10 @@ public class MainActivity extends Activity {
             ClipData clip = clipboard_content.getPrimaryClip();
             if (clip != null) text = clip.getItemAt(0).coerceToText(this);
         }
-        if (view == null)
-            editText.setText(text);
-        else
+        if (view == null) {
+            if (!editText.getText().toString().equals(text))
+                editText.setText(text);
+        } else
             editText.append(text);
     }
 
@@ -116,6 +119,5 @@ public class MainActivity extends Activity {
         else button_clearAndExit.setVisibility(View.GONE);
         if (centerText) editText.setGravity(Gravity.CENTER);
         else editText.setGravity(Gravity.START);
-        if (getOnOpen) getClipboard(null);
     }
 }
