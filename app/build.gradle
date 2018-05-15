@@ -15,7 +15,7 @@ android {
         minSdkVersion 4
         targetSdkVersion 23
         versionCode 1
-        versionName "03"
+        versionName "04"
         archivesBaseName = "ClipEdit_${versionName}_${getGitHash()}"
     }
     buildTypes {

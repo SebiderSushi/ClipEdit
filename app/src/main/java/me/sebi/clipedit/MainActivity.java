@@ -99,21 +99,25 @@ public class MainActivity extends Activity {
     }
 
     public void clearEditText(View view) {
-        if (closeOnClear) finish();
         editText.setText("");
+        if (closeOnClear) {
+            setClipboard(null);
+            finish();
+        }
     }
 
     public void clearAndExit(View view) {
-        finish();
         editText.setText("");
+        setClipboard(null);
+        finish();
     }
 
     public void loadPrefs() {
-        getOnOpen = prefs.getBoolean("getOnOpen", false);
-        setOnClose = prefs.getBoolean("setOnClose", false);
+        getOnOpen = prefs.getBoolean("getOnOpen", true);
+        setOnClose = prefs.getBoolean("setOnClose", true);
         closeOnClear = prefs.getBoolean("closeOnClear", false);
-        boolean clearAndExit = prefs.getBoolean("clearAndExit", false);
-        boolean centerText = prefs.getBoolean("centerText", false);
+        boolean clearAndExit = prefs.getBoolean("clearAndExit", true);
+        boolean centerText = prefs.getBoolean("centerText", true);
 
         if (clearAndExit) button_clearAndExit.setVisibility(View.VISIBLE);
         else button_clearAndExit.setVisibility(View.GONE);
